@@ -1,0 +1,41 @@
+.node {
+    position: absolute;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    user-select: none;
+    transition: box-shadow 0.2s ease;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.node:active {
+    cursor: grabbing;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.node .tempEdge line {
+    pointer-events: none;
+}
+
+.node[data-node-id]:hover {
+    outline: 2px solid grey;
+}
+
+.node .edgeDot{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,60%);
+    height: 12px;
+    width: 12px;
+    border: 2px solid grey;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: 11;
+    cursor: col-resize;
+}

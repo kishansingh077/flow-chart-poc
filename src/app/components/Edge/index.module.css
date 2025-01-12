@@ -1,0 +1,23 @@
+.edge {
+    position: absolute;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.edge line,
+.edge path {
+    transition: stroke 0.3s, stroke-width 0.3s;
+}
+
+.edge line:hover,
+.edge path:hover {
+    stroke: #0056b3;
+    stroke-width: 3;
+}
+
+.edge text {
+    font-family: Arial, sans-serif;
+    fill: #333;
+    font-size: 12px;
+    pointer-events: none;
+}
