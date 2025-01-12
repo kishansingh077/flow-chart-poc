@@ -127,8 +127,8 @@ const App = () => {
       ...prevNodes,
       {
         id: newNodeId,
-        x: 150,
-        y: 150,
+        x: comp ? 150 : 600,
+        y: comp ? 150 : 400,
         label: `Node ${newNodeId}`,
         render: comp ? Comp(newNodeId) : null
       }
@@ -156,12 +156,11 @@ const App = () => {
       }}
       onMouseUp={handlePanEnd}
       onMouseLeave={handlePanEnd}
-      onWheel={(e) => handleZoom(e.deltaY > 0 ? -0.1 : 0.1)}
+      // onWheel={(e) => handleZoom(e.deltaY > 0 ? -0.1 : 0.1)}
     >
       <svg
         className="react-flow__background"
         data-testid="rf__background"
-        // style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
         style={{
           position: "absolute",
           width: "100%",

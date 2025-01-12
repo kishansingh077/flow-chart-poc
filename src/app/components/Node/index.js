@@ -19,16 +19,16 @@ const Node = ({
       style={{ left: `${x}px`, top: `${y}px`, position: "absolute" }}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
-      onMouseOver={(e) => {
-        e.stopPropagation();
-        onMouseOver();
-      }}
     >
       <div
         className={styles.edgeDot}
         onMouseDown={(e) => {
           e.stopPropagation();
           onStartEdge();
+        }}
+        onMouseOver={(e) => {
+          e.stopPropagation();
+          onMouseOver();
         }}
       />
       {render ? render : <span>{label}</span>}
